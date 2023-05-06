@@ -29,15 +29,16 @@ class _splashPageState extends State<splashScreen> {
             color: Colors.black,
             child: Container(
 
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Text(
                   "Hidden Therapy",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 30),
+                      fontSize: _mediaQuery.size.width * 0.09,),
                 ),
               ]),
             )));

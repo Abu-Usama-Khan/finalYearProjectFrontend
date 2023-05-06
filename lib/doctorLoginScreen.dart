@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/doctorSignupScreen.dart';
+import 'package:my_app/doctorBarrierScreen.dart';
 
 
 class doctorLoginScreen extends StatelessWidget {
@@ -66,7 +67,12 @@ class doctorLoginScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                 
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => doctorBarrierScreen(),
+                    ),
+                  );
                 },
               ),
             ),

@@ -14,14 +14,16 @@ class homeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+               Text(
                 "Welcome!",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: _mediaQuery.size.width * 0.09, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 15),
-              const Text(
+               Text(
                 "Who r u?",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: _mediaQuery.size.width * 0.07, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 25),
               InkWell(
@@ -37,14 +39,15 @@ class homeScreen extends StatelessWidget {
                   width: _mediaQuery.size.width * 0.5,
                   height: _mediaQuery.size.height * 0.15,
                   color: Colors.grey[700],
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Patient",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: _mediaQuery.size.width * 0.05,
                             fontWeight: FontWeight.bold),
                       )
                     ],
@@ -65,14 +68,15 @@ class homeScreen extends StatelessWidget {
                   width: _mediaQuery.size.width * 0.5,
                   height: _mediaQuery.size.height * 0.15,
                   color: Colors.grey[700],
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Doctor",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize:_mediaQuery.size.width * 0.05,
                             fontWeight: FontWeight.bold),
                       )
                     ],

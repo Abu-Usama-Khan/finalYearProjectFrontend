@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+FONT SIZES
+For main heading
+_mediaQuery.size.width * 0.09,
+
+For Sub Heading
+_mediaQuery.size.width * 0.07,
+
+For Simple Text
+_mediaQuery.size.width * 0.05,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/doctorLoginScreen.dart';
+import 'package:my_app/doctorBarrierScreen.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class doctorSignupScreen extends StatefulWidget {
   @override
@@ -7,9 +9,14 @@ class doctorSignupScreen extends StatefulWidget {
 }
 
 class _doctorSignupScreenState extends State<doctorSignupScreen> {
+
+  List categoriesList = ["Psychiatrist","Psychologist"];
+  String _selectedCategory = "";
   @override
   Widget build(BuildContext context) {
     var _mediaQuery = MediaQuery.of(context);
+    
+    
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -104,6 +111,67 @@ class _doctorSignupScreenState extends State<doctorSignupScreen> {
                     prefixIcon: const Icon(Icons.phone, color: Colors.black)),
               ),
             ),
+            Container(width: _mediaQuery.size.width * 0.8,
+            margin: const EdgeInsets.only(bottom: 20),
+              child: DropdownButtonHideUnderline(
+                          child: DropdownButton2(
+                            dropdownStyleData: const DropdownStyleData(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8),
+                              )),
+                              elevation: 1,
+                            ),
+                            buttonStyleData: ButtonStyleData(
+                              padding: EdgeInsets.symmetric(vertical: 1),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border:
+                                      Border.all(color: Colors.black,width: 4)),
+                            ),
+                            iconStyleData: const IconStyleData(
+                              iconSize: 30.0,
+                            ),
+                            hint: _selectedCategory == ""
+                                ? const Text(
+                                    'Select Your Field',
+                                    style: TextStyle(color: Colors.black),
+                                  )
+                                : Text(
+                                    _selectedCategory,
+                                    style: const TextStyle(
+                                        color: Colors.black, fontSize: 16),
+                                  ),
+                            isExpanded: true,
+                            style: const TextStyle(color: Colors.black),
+                            items: categoriesList.map(
+                              (val) {
+                                return DropdownMenuItem<String>(
+                                  value: val,
+                                  child: Text(val),
+                                );
+                              },
+                            ).toList(),
+                            onChanged: (val) {
+                              setState(
+                                () {
+                                  _selectedCategory = "$val";
+                                 
+                                },
+                              );
+                            },
+                          ),
+                        ),
+            ),
+
+
+
+
+
+
+
+
             Container(
               width: _mediaQuery.size.width * 0.8,
               height: 40,
@@ -120,7 +188,12 @@ class _doctorSignupScreenState extends State<doctorSignupScreen> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                 
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => doctorBarrierScreen(),
+                    ),
+                  );
                 },
               ),
             ),
