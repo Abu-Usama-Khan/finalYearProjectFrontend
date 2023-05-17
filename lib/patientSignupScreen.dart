@@ -126,7 +126,7 @@ class _patientSignupScreenState extends State<patientSignupScreen> {
                 child: TextField(
                   controller: emailController,
                   decoration: InputDecoration(
-                      hintText: "Email Adress",
+                      hintText: "Email Address",
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                           borderSide:
