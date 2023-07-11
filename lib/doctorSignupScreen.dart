@@ -61,7 +61,7 @@ class _doctorSignupScreenState extends State<doctorSignupScreen> {
         showSuccessResponse("SignUp  Successfully");
         Timer(Duration(seconds: 2), () {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => doctorHomeScreen()));
+              MaterialPageRoute(builder: (context) => doctorBarrierScreen()));
         });
       } else {
         var data = jsonDecode(response.body.toString());
